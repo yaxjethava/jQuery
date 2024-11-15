@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business card maker</title>
+    <link rel="stylesheet" href="./cardByFormDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="/jquery-3.7.1.min.js"></script>
+    </head>
+
+<body>
+    <form id="myForm">
+        <h1>Business card maker</h1>
+
+        <input type="text" id="name" placeholder="Enter owner's name" required><br>
+        <input type="text" id="position" placeholder="Enter owner's position" required><br>
+        <input type="text" id="companyName" placeholder="Enter Your company name" required><br>
+        <input type="text" id="tagLine" placeholder="Enter tagline of company" required><br>
+        <input type="tel" id="number" placeholder="Enter contact number" required><br>
+        <input type="email" id="email" placeholder="Enter email id" required><br>
+        <input type="text" id="address" placeholder="Enter company address" required><br>
+        <input type="text" id="website" placeholder="Enter company's website" required><br>
+        <input type="text" id="logo" placeholder="Company's logo link" required><br><br>
+       
+        <button type="submit" id="submit-btn">Make a card</button>
+    </form>
+
+    <div class="card-main-wrapper">
+        <div class="left-side">
+            <img src="./BMW.png" alt="logo">
+            <div class="cmp-name">
+                <h2></h2>
+                <p></p>
+            </div>
+        </div>
+
+
+        <div class="right-side">
+            <div class="owner-name">
+                <h1></h1>
+                <p></p>
+            </div>
+
+            <div class="details">
+                <div class="details-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p class="call"></p>
+                </div>
+                <div class="details-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p class="email"></p>
+                </div>
+                <div class="details-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="address"></p>
+                </div>
+                <div class="details-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <p class="website"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="./cardByFormDetails.js"></script>
+</body>
+
+</html>

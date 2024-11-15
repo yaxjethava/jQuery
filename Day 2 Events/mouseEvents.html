@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #count-dis {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        background-color: rgba(0, 0, 255, 0.219);
+    }
+    button{
+        border:none;
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        margin: 5px 8px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+
+    <span id="count-dis">0</span><br>
+
+    <button id="dicrement">-</button>
+    <button id="incriment">+</button>
+
+
+
+    <script>
+        $(document).ready(() => {
+
+            let incre = $("#incriment");
+            let dicre = $("#dicrement");
+            let count_dis = $("#count-dis");
+
+            let count = 0;
+
+            /////////// method one click()////////
+
+            // incre.click(()=>{
+            //     count++;
+            //     count_dis.text(count)  
+            // })
+
+
+            ////////////method 2 on()///////////
+            
+            incre.on("click", () => {
+                count++;
+                count_dis.text(count)
+            })
+
+            dicre.on("click", () => {
+                if (count > 0) {
+                    count--;
+                    count_dis.text(count)
+                }else{
+                    alert("value is not less that 0")
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

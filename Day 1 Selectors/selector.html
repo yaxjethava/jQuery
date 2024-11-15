@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+
+    <h1 id="h1">The logo is blue?</h1>
+
+    <div class="box">
+        Yes
+    </div>
+    <div class="box">
+        No
+    </div>
+
+    <p>Share your opinion 1</p>
+    <p>Share your opinion 2</p>
+    <p>Share your opinion 5</p>
+
+    <img src="BMW.png" alt="logo" width="200px">
+
+    <script>
+
+        $(document).ready(() => {
+           
+            let heading=$("#h1").text();
+            let boxs=$(".box")
+            let para=$("p").text()
+            let img=$("img").attr("src")
+
+
+            console.log(heading,boxs.text(),para,img)
+            console.log(para)
+        })
+
+    </script>
+</body>
+
+</html>
