@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/jquery-3.7.1.min.js"></script>
+    <title>Toggeled navbar</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .logo img {
+        height: 90%;
+    }
+
+    #menu {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 2%;
+    }
+
+    #menu ul {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    #menu ul li {
+        width: 25%;
+        height: 100%;
+    }
+
+    #menu ul li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 1.1rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    #menu ul li a:hover {
+        color: #3B7DED;
+    }
+
+    .sign-in {
+        cursor: pointer;
+        width: 150px;
+        height: 80%;
+        border: none;
+        background-color: gray;
+        color: black;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+
+    #open-menu {
+        width: 15%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    /* for small devices */
+    
+    #small-menu {
+        display: none;
+        transition: 0.4s all ease-in-out;
+        float: right;
+        width: 250px;
+        height: 100vh;
+        background-color: #F5F5F5;
+        padding: 2%;
+    }
+    .mobile-menu{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 80px;
+    }
+    #small-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        height: auto;
+    }
+
+    #small-menu ul li {
+        width: 100%;
+        height: 30px;
+    }
+
+    #small-menu ul li a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    #small-menu ul li a:hover {
+        color: #3B7DED;
+    }
+
+    #small-menu .sign-in {
+        cursor: pointer;
+        width: 150px;
+        height: 45px;
+        border: none;
+        background-color: gray;
+        color: black;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+
+
+    @media (max-width:769px) {
+        #menu {
+            display: none;
+        }
+
+        #open-menu {
+            display: flex;
+        }
+
+        .logo {
+            width: auto;
+        }
+    }
+</style>
+
+<body>
+
+    <nav id="large_screen_nav">
+
+        <div class="logo">
+            <img src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg" alt="logo">
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">News</a></li>
+            </ul>
+            <button class="sign-in">Sign in</button>
+        </div>
+
+        <div id="open-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <div id="small-menu">
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">News</a></li>
+            </ul>
+            <button class="sign-in">Sign in</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(() => {
+
+            $("#open-menu").on("click", () => {
+                $("#small-menu").toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>
