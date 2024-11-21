@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Slider navbar</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    nav {
+        width: 100%;
+        background-color: whitesmoke;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 13%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 2rem;
+        color: rgb(60, 158, 223);
+    }
+
+    .menu {
+        background-color: whitesmoke;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25%;
+        height: 100%;
+        gap: 15px;
+    }
+
+    .menu ul li {
+        transition: 0.4s all ease-in;
+        width: 100%;
+        height: 45px;
+    }
+
+    .menu ul li a {
+        width: 100%;
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu ul li a:hover {
+        transition: 0.4s all ease-in-out;
+        color: rgb(28, 120, 217);
+    }
+
+    .menu .sign-in {
+        transition: ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem 2.5rem;
+        color: rgb(60, 158, 223);
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: black;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+    }
+
+    .menu .sign-in:hover {
+        transition: all 0.4s ease-in;
+        color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        border: 2px solid rgb(0, 0, 0);
+    }
+
+    .hemburger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 5%;
+        height: 100%;
+        font-size: 1.8rem;
+    }
+
+    @media (max-width:426px) {
+        .logo{
+            width: 40%;
+        }
+        .menu ul{
+            width: 50%;
+        }
+        .hemburger{
+            width: 10%;
+        }
+    }
+</style>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            LOGO
+        </div>
+        <div class="hemburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="menu">
+        <ul>
+            <li id="li1" style="display: none;"><a href="">Home</a></li>
+            <li id="li2" style="display: none;"><a href="">About</a></li>
+            <li id="li3" style="display: none;"><a href="">Books</a></li>
+            <li id="li4" style="display: none;"><a href="">Contact</a></li>
+            <div class="sign-in" style="display: none;">
+                Sign in
+            </div>
+        </ul>
+    </div>
+
+
+    <script>
+        $(document).ready(() => {
+
+            $(".menu").css("display", "none");
+
+            $(".hemburger").on("click", () => {
+
+                if ($(".menu").is(":hidden")) {
+
+                    $(".menu").slideDown()
+                    $(".sign-in").slideDown(1000)
+                    $("#li4").slideDown(1500)
+                    $("#li3").slideDown(2000)
+                    $("#li2").slideDown(2500)
+                    $("#li1").slideDown(3000)
+
+                } else {
+                    $("#li1").slideUp(500)
+                    $("#li2").slideUp(1000)
+                    $("#li3").slideUp(1500)
+                    $("#li4").slideUp(2000)
+                    $(".sign-in").slideUp(2300)
+                    $(".menu").slideUp(2400)
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
