@@ -29,7 +29,6 @@ body {
 }
 
 .main-wrapper {
-    /* border: 2px solid var(--lightBlue); */
     box-shadow: 0 0 10px 2px var(--lightBlue);
     border-radius: 20px;
     padding: 1%;
@@ -98,7 +97,7 @@ body {
 .btn-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     height: 20%;
     gap: 30px;
