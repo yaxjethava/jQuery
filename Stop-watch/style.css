@@ -9,6 +9,11 @@
     src: url(Lightdot-13x9.ttf);
 }
 
+@font-face {
+    font-family: "heading";
+    src: url(Doto-VariableFont_ROND\,wght.ttf);
+}
+
 :root {
     --lightBlue: rgba(0, 149, 255, 0.845);
     --light: rgba(113, 182, 232, 0.97);
@@ -20,11 +25,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #04012e;
+    background-color: #000000;
 }
 
 .main-wrapper {
-    border: 2px solid var(--lightBlue);
+    /* border: 2px solid var(--lightBlue); */
+    box-shadow: 0 0 10px 2px var(--lightBlue);
     border-radius: 20px;
     padding: 1%;
     width: 400px;
@@ -43,9 +49,9 @@ body {
 
 .heading-box h1 {
     color: var(--lightBlue);
-    font-family:sans-serif;
-    font-size: 2.5rem;
-    font-weight:bold;
+    font-family: "heading";
+    font-size: 3.5rem;
+    font-weight: 900;
 }
 
 /* display box */
@@ -100,9 +106,6 @@ body {
 
 #start {
     cursor: pointer;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     height: 65px;
     width: 65px;
     border-radius: 50%;
@@ -111,11 +114,14 @@ body {
     color: white;
     background-color: transparent;
 }
-#start i{
+
+#start i {
     margin-left: 5px;
     margin-top: 3px;
 }
-#end,#stop{
+
+#end,
+#stop {
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -127,4 +133,12 @@ body {
     border: none;
     background-color: transparent;
     color: var(--light);
+}
+
+@media (max-width:426px) {
+    .main-wrapper {
+        border-radius: 10px;
+        padding: 2%;
+        width: 94%;
+    }
 }

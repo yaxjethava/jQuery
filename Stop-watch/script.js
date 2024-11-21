@@ -33,16 +33,26 @@ function updatTimer() {
             }
         }
     }
-
 }
+start_btn.css("display", "block");//show
+end_btn.css("display", "none")//hide
+stop_btn.css("display", "none")//hide
 
 // on start button
 start_btn.on("click", () => {
-    fun = setInterval(updatTimer, 0.1);
+
+    fun = setInterval(updatTimer, 1000);
+    start_btn.css("display", "none");
+    end_btn.css("display", "block")
+    stop_btn.css("display", "block")
+
 })
 
 // for stop button
 stop_btn.on("click", () => {
+    start_btn.css("display", "block");//show
+    end_btn.css("display", "none")//hide
+    stop_btn.css("display", "none")//hide
     clearInterval(fun);
 })
 
@@ -58,4 +68,9 @@ end_btn.click(() => {
     hours_dis.text("00")
     m_display.text("00")
     s_display.text("00")
+
+    start_btn.css("display", "block");
+    end_btn.css("display", "none")
+    stop_btn.css("display", "none")
+
 })
